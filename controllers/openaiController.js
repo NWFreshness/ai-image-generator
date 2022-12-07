@@ -16,13 +16,14 @@ const generateImage = async(req, res) => {
       n: 1, 
       size: imageSize
     });
-
     const imageUrl = response.data.data[0].url;
 
     res.status(200).json({
       success: true, 
-      data: imageUrl
+      img_url: imageUrl
     })
+
+    
   } catch (error) {
     if(error.response){
       console.log(error.response.status);
